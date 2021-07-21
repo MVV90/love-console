@@ -1,7 +1,5 @@
 # love-console
 
-![](./demo.png)
-
 ## Features
 - Activate and deactivate the console with the `~` key.
 - Use the `left` and `right` arrows to navigate the cursor.
