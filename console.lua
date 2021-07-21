@@ -272,7 +272,7 @@ end
 
 function console.textinput(input)
   -- Use the "~" key to enable / disable the console.
-  if input == "~" then
+  if input == "~" or input == "`" then
     enabled = not enabled
     return
   end
