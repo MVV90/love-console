@@ -173,6 +173,10 @@ local command = {
       self.cursor = self.cursor - 1
     end
   end,
+  delete_forward = function(self)
+    -- Delete the character after the cursor.
+    self.text = self.text:sub(0, self.cursor) .. self.text:sub(self.cursor + 2)
+  end,
   forward_character = function(self)
     self.cursor = math.min(self.cursor + 1, self.text:len())
   end,
@@ -325,6 +329,7 @@ function console.keypressed(key, scancode, isrepeat)
   local alt = love.keyboard.isDown("lalt")
 
   if key == 'backspace' then command:delete_backward()
+  elseif key == 'delete' then command:delete_forward()
 
   elseif key == "up" then command:previous()
   elseif key == "down" then command:next()
