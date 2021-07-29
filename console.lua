@@ -175,9 +175,7 @@ local command = {
   end,
   delete_forward = function(self)
     -- Delete the character after the cursor.
-    if self.cursor >= 0 then
-      self.text = self.text:sub(0, self.cursor) .. self.text:sub(self.cursor + 2)
-    end
+    self.text = self.text:sub(0, self.cursor) .. self.text:sub(self.cursor + 2)
   end,
   forward_character = function(self)
     self.cursor = math.min(self.cursor + 1, self.text:len())
